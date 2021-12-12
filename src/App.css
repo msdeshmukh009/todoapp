@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat:wght@200&display=swap');
 :root{
-  --primary-color:#63B4B8;
-  --secondary-color:#181D31;
+  --primary-color:white;
+  --secondary-color:#171717;
   --card-background:white;
 }
 body{
@@ -11,9 +11,9 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 .input-text{
-  background-color:var(--primary-color) ;
+  /* background-color:var(--primary-color) ; */
   border: 2px solid var(--secondary-color);
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   padding: 0.5rem;
   color: var(--secondary-color);
   display: block;
@@ -22,22 +22,32 @@ body{
 
 ::placeholder {
   color: var(--secondary-color);
-  opacity: 1; /* Firefox */
+  opacity: 1; 
 }
 form{
   border: 2px solid var(--secondary-color);  
-  border-radius: 0.3rem;
+  border-radius: 0.5rem;
   margin:1rem auto 1rem ;
   width: 80%;
-
+  background-color: var(--card-background);
 }
-
+.select-options{
+  background-color: var(--primary-color);
+  border:2px solid var(--secondary-color);
+  border-radius: 0.3rem;
+  padding: 0.25rem;
+}
 .btn{
   background-color: var(--primary-color);
   border: 2px solid var(--secondary-color);
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   margin:1rem auto 1rem;
   color: var(--secondary-color);
+}
+.add-btn{
+  width: 2rem;
+  height: 2rem;
+  background-color: var(--primary-color);
 }
 .delete{
   padding: 0.1rem;
@@ -68,7 +78,12 @@ li{
   padding: 10px;
   position: relative;
 }
-
+.description-para{
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
 /* popup-css */
 .details-box{
   position: fixed;
@@ -95,8 +110,6 @@ li{
 .close{
   content: 'x';
   cursor: pointer;
-  border: 2px solid var(--secondary-color);
-  border-radius: 50%;
   position: relative;
   padding: 0.2rem;
   width: 25px;

@@ -72,7 +72,7 @@ function App(){
     <div>
       <h1 className="app-title">ToDo</h1>
       <button 
-      className="btn"
+      className="btn add-btn"
       onClick={()=>formDisplay()}>
         {formVisible?"-":"+"}
       </button>
@@ -120,8 +120,8 @@ function App(){
                 border:'2px solid' ,
                 backgroundColor:item.complitionStatus==='pending'?
                 'lightpink': item.complitionStatus === 'doing'?
-                'lightyellow': item.complitionStatus === 'done'?
-                'lightgreen':'white'
+                'lightGreen': item.complitionStatus === 'done'?
+                '#EAEAEA':'white'
               }}
               className="card"
               key={item.id}>
@@ -140,13 +140,24 @@ function App(){
 
                 <div>
                 <label>status:</label>
-                <select onChange={(e)=>setComplitionStatus(e.target.value,item.id)}>
-                  <option default value="pending">pending</option>
-                  <option value="doing">doing</option>
-                  <option value="done">done</option>
-                  
-                  
-                  
+                <select 
+                className="select-options"
+                onChange={(e)=>setComplitionStatus(e.target.value,item.id)}>
+                  <option 
+                  style={{backgroundColor:'lightpink'}}
+                  default value="pending"
+                  >pending
+                  </option>
+
+                  <option 
+                   style={{backgroundColor:'lightGreen'}}
+                  value="doing"
+                  >doing
+                  </option>
+
+                  <option 
+                  style={{backgroundColor:'#EAEAEA'}}
+                  value="done">done</option>
                 </select>
                 </div>
 
@@ -162,9 +173,10 @@ function App(){
                 </button>
                 <div>
                   <p
+                  className="description-para"
                   style={{
                     display:item.detailsStatus?'block':'none',
-                    backgroundColor:'white'
+                   
                 }}
                   >{item.description?item.description:'no description'}</p>
                 </div>
